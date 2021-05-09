@@ -1,3 +1,3 @@
 @echo off
-pdflatex GDD.tex
+pdflatex Game_Design_Document.tex
 clear

@@ -1,4 +1,4 @@
 @echo off
-pdflatex GDD.tex
-pdflatex GDD.tex
-pdflatex GDD.tex
+pdflatex Game_Design_Document.tex
+pdflatex Game_Design_Document.tex
+pdflatex Game_Design_Document.tex
