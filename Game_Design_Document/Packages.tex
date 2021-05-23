@@ -17,9 +17,11 @@
 \usepackage{longtable}
 
 \titleformat{\section}
-  {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+  {\normalfont\LARGE\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
 \titleformat{\subsection}
-  {\normalfont\Large\bfseries}{\thesubsection}{1em}{}[{\titlerule[0.5pt]}]
+  {\normalfont\Large\bfseries}{\thesubsection}{1em}{}[{}]
+\titleformat{\subsubsection}
+  {\normalfont\large\bfseries}{\thesubsubsection}{1em}{}[{}]
 
 \usepackage{fancyhdr,graphicx,lastpage}% http://ctan.org/pkg/{fancyhdr,graphicx,lastpage}
 \fancypagestyle{plain}
@@ -47,6 +49,14 @@
 	\centering
 	\includegraphics[max width=0.5\textwidth]{#1} 
 	\caption{#3}
+	\end{wrapfigure}
+	}
+\newcommand{\sidewrapgraphicsquoted}[3]
+	{
+	\begin{wrapfigure}[#2]{r}{0.5\linewidth}
+	\centering
+	\includegraphics[max width=0.5\textwidth]{#1} 
+	\\ \textit{#3}
 	\end{wrapfigure}
 	}
 \newcommand{\fullwidthgraphics}[1]
@@ -83,6 +93,16 @@
 	\includegraphics[max width=\textwidth]{#1} 
 	\caption{#2}
 	\end{figure}
+	}
+\newcommand{\largeparagraph}[1]
+	{
+	\paragraph{\large #1}
+	}
+
+\newcommand{\newlineparagraph}[1]
+	{
+	\largeparagraph{#1 ~\\ \noindent} 
+	
 	}
 	
 % #1 filepath #2 img size #3 rowsamount
