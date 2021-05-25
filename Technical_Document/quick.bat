@@ -1,3 +1,3 @@
 @echo off
-pdflatex DOD.tex
+pdflatex TD.tex
 clear
