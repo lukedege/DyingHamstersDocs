@@ -1,0 +1,25 @@
+\section{Connection}
+
+\subsection{Global Infrastructure}
+TODO
+
+\subsection{Network Requirements}
+
+\subsubsection{Outside}
+Our bandwith requirements are minimal, since we only have to exchange small TCP packets for every game turn between players and server, and only a couple of minigames require real-time communication between an individual client and the server for cheating-prevention.
+Similarly there are not strict requirements for latency, an high latency can be tolerated. Moreover any exceptional latency can be masked pretending other players still have to make their actions choice for the ongoing turn. For real time minigames, the only purpose of the network usage is checking for cheating, which even on high latency can be achieved through time deltas and positions interpolation. Since there's no real-time multiplayer noone will notice it.
+
+A latency of 200ms on average should be fine, with 1s+ starting to get noticeable in case the timer for chosing actions has already expired before receiving the information about the next turn. But again, it doesn't affect gameplay.
+Bandwith: 1Mbit/s should be more than enough fur a full lobby.
+
+\subsubsection{Inside}
+TODO
+
+
+\subsection{Network Hardware}
+TODO
+
+\subsection{Network Software}
+TODO
+
+\pagebreak 
