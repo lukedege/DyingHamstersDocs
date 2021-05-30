@@ -1,0 +1,20 @@
+\subsection{Backend}
+For backend part, considering the turn-based mechanics and almost no physics involved, we didn't require high-performance game servers. We decided to use Amazon GameLift \footnote{https://aws.amazon.com/it/gamelift/} service, as part of Amazon Web Services, to ease us from hardware failures, data security issues, scalability and storage options. Moreover, monthly prices are calculated based on the real use of our game servers.\\
+Regarding the Database part, we will use Amazon DynamoDB to keep memory of players’ data like collectables, ranking and also match history.\\
+Amazon DynamoDB \footnote{https://aws.amazon.com/it/dynamodb/} is a NoSQL service that supports document-type and key-value data models and provide constant latency and low response time on global scale.\\
+DynamoDB has no operative cost if paired with other AWS services, so it's the most complete option for our system that heavely relies on Amazon Web Services.\\
+Moreover, it supports global database tables, to allow developers to expand game borders to other regions.
+\subsubsection{Hardware}
+For the main Game Server we have chosen a c4.xlarge instance \footnote{https://aws.amazon.com/it/ec2/instance-types/} that have a better cost/computational power ratio providing us the right amount of resources needed.\\
+In order to grant the best coverage and performances we wanted to use 4 Game Servers located in North America, Europe, Asia and China.\\
+\\
+\textbf{TODO}: INSERIRE TABELLA PREZZI
+\\
+Regarding the Database, DynamoDB is serverless and will automatically resize data table to adapt capacity and performaces. We decided to use the on-demand capacity mode to optimize costs, paying only the resources used.\\
+\\
+\textbf{TODO}: INSERIRE CALCOLI SULLE TABELLE
+\\
+\subsubsection{Software}
+AWS services will use Linux OS. We can communicate with Amazon GameLift Services using dedicated GameLift Services API.
+\subsubsection{Scalability and Extensibility}
+Both our game servers and database service infrastructure support automatic workload adaptation and scalability, allowing to scale up the system if required. \\

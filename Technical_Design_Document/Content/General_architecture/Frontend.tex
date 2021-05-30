@@ -1,0 +1,27 @@
+\subsection{Frontend}
+For the front end we decided to use Steam with Steamworks API \footnote{https://partner.steamgames.com/doc/api} and have a custom website, which will also run the HTML5 version of the game, held using Amazon Web Services.\\
+Since we distribute our game through Steam we will use some of their features like:
+\begin{itemize}
+\item Authentication
+\item Achievements tracking
+\item Leaderboards
+\item Friends Invitation
+\item Matchmaking
+\item Patch downloads
+\item Payments for in-game purchase
+\end{itemize}
+We will also rely on AWS for both Frontend and Backend because of the use of Amazon GameOn \footnote{https://developer.amazon.com/it/blogs/appstore/post/226f8a6f-ab31-437b-af91-4416e88f019a/yoyo-games-introduces-the-amazon-gameon-plugin-for-gamemaker-studio-2} plugin APIs that will allow us to create cross-platforms competition and tournaments.\\
+ 
+\subsubsection{Hardware}
+For the Steam part of our front-end, the work is delegating to Steam and it's not necessary to use special hardware or software for that.\\
+Our website platform, instead, will require dedicated hardware using AWS. Since our platform will be medium-weight, we decided to use a t2.medium instance \footnote{https://aws.amazon.com/it/ec2/instance-types/} of Amazon EC2 service to handle the standard website traffic and the game traffic generated when playing through browser.\\
+We decided to rely on T2 instances because they can expand their performances based on the workload (using CPU credit system) and have the possibility to temporary overcome the base CPU performance given.\\
+Website and web applications are the most suitable tasks for those type of EC2 instances.\\
+\\
+\textbf{TODO}: INSERIRE TABELLA PREZZI
+\\
+\subsubsection{Software}
+We will use an Apache Web Server that will be set up in Amazon EC2 instance. The server will be managed using AWS Elastic Beanstalk which will allow us to quickly deploy and manage application in AWS Cloud. We will use Elastic Beanstalk \footnote{https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html} web interface for application health monitoring and automatic scaling based on our needs.
+
+\subsubsection{Scalability and Extensibility}
+Both our frontend service support automatic workload adaptation and scalability, allowing to scale up the system in few minutes if required. \\
