@@ -6,14 +6,70 @@ DynamoDB has no operative cost if paired with other AWS services, so it's the mo
 Moreover, it supports global database tables, to allow developers to expand game borders to other regions.
 \subsubsection{Hardware}
 For the main Game Server we have chosen a c4.xlarge instance \footnote{https://aws.amazon.com/it/ec2/instance-types/} that have a better cost/computational power ratio providing us the right amount of resources needed.\\
-In order to grant the best coverage and performances we wanted to use 4 Game Servers located in North America, Europe, Asia and China.\\
+In order to grant the best coverage and performances we wanted to use 3 Game Servers located in North America, Europe, Asia.
 \\
-\textbf{TODO}: INSERIRE TABELLA PREZZI
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textit{Service} & \textit{Location} & \textit{Memory} & \textit{vCPUs} & \textit{Network Perf.} & \textit{Storage} & \textit{On-Demand cost/h}\\
+\hline
+c4.xlarge &	\textbf{EU (Frankfurt)} & 7.5GiB &	4 &	High & EBS only & 0.19 €\\
+\hline
+\end{tabular}
+\\\\\\
+\begin{tabular}{lcr}
+Amazon Elastic Block Storage (EBS)/monthly  & 18,86€ + VAT \\
+Amazon EC2 c4.xlarge on demand/monthly & 310,65€ + VAT \\
+\hline
+\textbf{Total Monthly cost} & 329.51€ + VAT = \textbf{402,10€}
+\end{tabular}
 \\
+\\\\\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textit{Service} & \textit{Location} & \textit{Memory} & \textit{vCPUs} & \textit{Network Perf.} & \textit{Storage} & \textit{On-Demand cost/h}\\
+\hline
+c4.xlarge &	\textbf{US West (Oregon)} & 7.5GiB &	4 &	High & EBS only & 0.16 €\\
+\hline
+\end{tabular}
+\\\\\\
+\begin{tabular}{lcr}
+Amazon Elastic Block Storage (EBS)/monthly  & 16.88€ + VAT \\
+Amazon EC2 c4.xlarge on demand/monthly & 272.33€ + VAT \\
+\hline
+\textbf{Total Monthly cost} & 289.21€ + VAT = \textbf{352,84€}
+\end{tabular}
+\\\\\\
+\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textit{Service} & \textit{Location} & \textit{Memory} & \textit{vCPUs} & \textit{Network Perf.} & \textit{Storage} & \textit{On-Demand cost/h}\\
+\hline
+c4.xlarge &	\textbf{Asia Pacific (Tokyo)} & 7.5GiB &	4 &	High & EBS only & 0.21 €\\
+\hline
+\end{tabular}
+\\\\\\
+\begin{tabular}{lcr}
+Amazon Elastic Block Storage (EBS)/monthly  & 18.00€ + VAT \\
+Amazon EC2 c4.xlarge on demand/monthly & 344,87€ + VAT \\
+\hline
+\textbf{Total Monthly cost} & 362,87€ + VAT = \textbf{442,70€}
+\end{tabular}
+\\\\\\
 Regarding the Database, DynamoDB is serverless and will automatically resize data table to adapt capacity and performaces. We decided to use the on-demand capacity mode to optimize costs, paying only the resources used.\\
 \\
-\textbf{TODO}: INSERIRE CALCOLI SULLE TABELLE
-\\
+We estimated up to 50KB of data to be stored for every player, with a player base of 100.000 players and up to 10.000 peak players connected at the same time. We will need up to 5TB for the storage that can be resized flexibly with the on-demand capacity mode.\\
+Moreover, we estimated up to 4 games per hour, with 1 hour of play per player. This will mean up to 20.000 writing and reading to the database.\\
+Considering all of those variables our costs are:\\\\\\
+\begin{tabular}{lcr}
+Monthly writing cost & 38.02€ + VAT \\
+Monthly reading cost & 1€ + VAT \\
+Monthly DynamoDB data storage costs & 1284.98€ + VAT \\
+\hline
+\textbf{Total Monthly cost} & 1,324€ + VAT = \textbf{1615.28€}
+\end{tabular}
+\\\\
+
+For more detail about all our estimation check here\footnote{https://tinyurl.com/calculatorAWS }.
 \subsubsection{Software}
 AWS services will use Linux OS. We can communicate with Amazon GameLift Services using dedicated GameLift Services API.
 \subsubsection{Scalability and Extensibility}
