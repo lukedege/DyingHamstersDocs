@@ -16,6 +16,7 @@
 \usepackage{titlesec}
 \usepackage{longtable}
 \usepackage{hyperref}
+\usepackage[default]{lato}
 
 \titleformat{\section}
   {\normalfont\LARGE\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
@@ -28,8 +29,9 @@
 \fancypagestyle{plain}
 	{
 	\fancyhf{}% Clear header/footer
-	\fancyhead[R]{Dying Hamsters - Game Design Document}% Right header
-	\fancyhead[L]{\includegraphics[width=2cm]{../Pictures/Unimi_logo.png}}% Left header
+	\fancyhead[R]{Dying Hamsters - Technical Design Document}% Right header
+	\fancyhead[L]{\includegraphics[width=2cm]{../Pictures/Unimi_logo.png}
+					\includegraphics[width=2cm]{../Pictures/pong_logo.png}}% Left header
 	\fancyfoot[R]{\thepage}% Right footer
 	}
 \pagestyle{plain}% Set page style to plain.
@@ -117,7 +119,10 @@
 	
 \newcommand{\specialcell}[2][c]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-	
+  
+
+%\renewcommand{\familydefault}{\sfdefault}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUSTOM COMMANDS USAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
