@@ -12,6 +12,7 @@ Since we distribute our game through Steam and Google Play Service we will use s
 For the Matchmaking part of the game we will rely on AWS GameLift FlexMatch \footnote{https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-intro.html} . We will also rely on AWS for both Frontend and Backend because of the use of Amazon GameOn \footnote{https://developer.amazon.com/it/blogs/appstore/post/226f8a6f-ab31-437b-af91-4416e88f019a/yoyo-games-introduces-the-amazon-gameon-plugin-for-gamemaker-studio-2} plugin APIs that will allow us to create cross-platforms competition and tournaments.\\
  
 \subsubsection{Hardware}
+\label{section:frontend_hardware}
 For the Steam part and the Google Play Service part of our front-end, the work is delegated and it's not necessary to use special hardware or software for that.\\
 There will be a one time \textbf{80€} cost for the Steam submission fee and a one time \textbf{20€} cost for the Google Play Service submission fee.\\
 Our website platform, instead, will require dedicated hardware using AWS. Since our platform will be medium-weight, we decided to use a t2.medium instance \footnote{https://aws.amazon.com/it/ec2/instance-types/} of Amazon EC2 service to handle the standard website traffic and the game traffic generated when playing through browser.\\

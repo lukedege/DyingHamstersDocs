@@ -10,11 +10,13 @@ Our bandwith requirements are minimal, since we only have to exchange small TCP 
 Similarly there are not strict requirements for latency, an high latency can be tolerated. Moreover any exceptional latency can be masked pretending other players still have to make their actions choice for the ongoing turn. For real time minigames, the only purpose of the network usage is checking for cheating, which even on high latency can be achieved through time deltas and positions interpolation. Since there's no real-time multiplayer noone will notice it.
 
 A latency of 200ms on average should be fine, with 1s+ starting to get noticeable in case the timer for chosing actions has already expired before receiving the information about the next turn. But again, it doesn't affect gameplay.
-Bandwith: 1Mbit/s should be more than enough fur a full lobby.
+
+Bandwith: 1Kbit/s should be more than enough fur a full lobby. In the worst case we have to share the action choices for each characters, the coordinates of the rooms targeted by an action, the index of the player targeted by an action, and eventual room effects. Sending 100 to each player integers is more than enough, with a lot of headroom. Cheat-prevention for the most real-time minigame (Bullet hell) can be achievend sending a coordinates pair from the client to the server around two times per second.
+
+
 
 \subsubsection{Inside}
 TODO
-
 
 \subsection{Network Hardware}
 TODO
