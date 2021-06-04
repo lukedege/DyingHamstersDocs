@@ -14,9 +14,8 @@ A latency of 200ms on average should be fine, with 1s+ starting to get noticeabl
 Bandwith: 1Kbit/s should be more than enough fur a full lobby. In the worst case we have to share the action choices for each characters, the coordinates of the rooms targeted by an action, the index of the player targeted by an action, and eventual room effects. Sending 100 to each player integers is more than enough, with a lot of headroom. Cheat-prevention for the most real-time minigame (Bullet hell) can be achievend sending a coordinates pair from the client to the server around two times per second.
 
 
-
 \subsubsection{Inside}
-TODO: Che sarebbe? Maybe cancellarla se non serve
+The inside network doesn’t require particular attention because the AWS infrastructure is efficient and powerful enough.
 
 \subsection{Network Hardware}
 Relying on the services offered by renting machines using AWS, it isn’t necessary to manage the hardware physically. Amazon Web Services guarantee remote access to those machines using AWS Elastic Beanstalk software.
