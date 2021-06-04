@@ -1,2 +1,18 @@
 \subsubsection{Interface}
-\textbf{TODO}: insert mockup of interface (in lobby and in game)
+The UI has 4 main elements: 
+
+\begin{itemize}
+	\item A grid in the background, which shows the game map, with Rooms and Characters. In all devices it can be freely zoomed in and out, dragged and moved with device-conventional controls (press and drag on mobile, arrow keys and rts-style mouse to the border on PC). Only the Rooms visited and seen by the Player are visible, the others are hiddnen.
+	\item A sidebar which shows information. It shows the information for the currently selected tile of the map. On the top there's an enlarged image of the room, the rest is split in 2 tabs, of which one has a text describing the room, and the other has a text describing that room's minigame.
+	\item A sidebar for action selection and invetory. On small screens the actions are collapsed in a scrollable vertical list; on larger screens they're all visibles. Two spaces on top show the actions selected by the player, and a time bar shows the time left to select actions.
+	\item On mobile the two sidebars are merged into one with multiple tabs: Actions, Invetory, Room Description and Minigame Description.
+\end{itemize}
+
+When all players selected their actions and the turn execution starts, the sidebars automatically hide themselves, and a bar appears on top showing the actions in their execution order as they are run.
+
+\fullwidthgraphicscaption{../Pictures/UI/Desktop_default.png}{Desktop default UI}
+\fullwidthgraphicscaption{../Pictures/UI/Desktop_ongoing.png}{Desktop UI during turn execution}
+\fullwidthgraphicscaption{../Pictures/UI/Mobile_default.png}{Mobile default UI}
+\fullwidthgraphicscaption{../Pictures/UI/Mobile_ongoing.png}{Mobile UI during turn execution}
+
+\pagebreak 

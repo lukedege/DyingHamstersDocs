@@ -1,12 +1,18 @@
-\subsubsection{Procedures}
+\subsubsection{Rules \& Procedures}
+The game proceeds cycling in phases. We have 3 phases:
 \begin{itemize}
-\item When the game starts all the players are in the center room and can perform 2 actions
-\item  When a player enters in a room for the first time a puzzle is proposed and he has 1 minute to solve it. (Mind: some rooms don’t have a puzzle and nothing will happen when entering in it)
-\item  Depending on the room type and on the outcome of the puzzle the player can receive positive or negative effects that will affect other player statuses or his own status.
-\item In every phase of the game the player can click on the “info” icon to receive information of a specific room that he discovered.
-\item When the player enters in a room or use the “Look” action to a room, he will discover it
-\item Player statuses affect the quantity and type of actions that the player can perform
-\item When the player reach the Magic Broom room he collect it
-\item If the player that hold the Magic Broom reach the Exit room he wins the game
-\item Once per game the player is able to perform an extra free-cost action specific for his avatar class by clicking of the relative icon
+	\item Choosing Phase: all the players choose their next turn actions based on their status that affects the quantity/type of actions that he can perform.
+	\item Executing Phase: all the actions are evaluated following a given players order. This order changes turn by turn in rotation. The first player in a turn becomes the last player in the next turn.
+	\item Puzzle Phase: after all actions are evaluated, players which character has changed Room since last turn will play the puzzle connected to their current room.
+\end{itemize}
+
+\begin{itemize}
+	\item The default state of all Rooms is hidden. Players cannot query information about any Room they haven't discovered.
+	\item When the player enters in a room or use the “Look” action to a room, he will discover it, and be able to query that room's information.
+	\item When the game starts all the players are in the center room and can perform 2 actions
+	\item When players play the puzzle minigames, they have 1 minute to solve it. (Note: some rooms don’t have a puzzle and nothing will happen when entering in it).
+	\item Depending on the room type and the outcome of the puzzle, the player can receive positive or negative effects that will affect other players statuses or his own status.
+	\item The first player to enter a Room with objects on the floor, will automatically collect all of them.
+	\item When a Character is killed, all the items in his inventory go to the Player that killed it, if he is in the same Room; if he isn't but there are other players in the same room, a randomly chosen one will get the items. If there's no other Character in the Room, the items remain on the floor.
+	\item Once per game the player is able to perform an extra free-cost action specific for his avatar class.
 \end{itemize}
