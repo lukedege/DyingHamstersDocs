@@ -8,18 +8,31 @@ The Android version of the game will be delivered through the Google App Store.
 The HTML    version of the game will be available in a dedicated page within our website.
 
 \subsection{Delivery Methodology}
-Steam is used to sell the game for a starting price of 7,99€, advertisement-free.
-The Android version is available for free through the Google App Store with advertisements, but an in-app purchase to prevent the advertisements.
-We take advantage of those platforms to manage users login and to associate achievements to an user. A game account from one platform can be linked to the user in the other platform. When this happens, the obtained achievements are shown on both platforms. 
+The Steam and Android version are available for free through the Steam store and Google App Store respectively, with advertisements, but an in-app purchase for the same 7.99€ to prevent the advertisements.
+The HTML version in our website will be playable for free, but will require a login through Google or Steam accounts.
+
+Achievements and purchases information is kept in our database, associated with the user-id. 
+In all the versions, the user can link an existing user-id to his account on the other platform. 
+
+When a player obtains an achievement in the Steam or Android client, the achievement is added both to his platform-specific account (using Steam/Google API) and to our database; when a player obtains an achievement in the HTTP client, the achievement is added only to our database; when that player logs in with a different client, all the new achievements stored in our database will be added to the relative service as well.
+
+\textbf{Example}
+
+\begin{itemize}
+	\item Player #12345 logs in through his 12345@google.com Google account
+	\item Unlocks achievement A. A is added to his Google Play Achievements and in our database, associated with #12345.
+	\item Links his id #12345 with his Steam account.
+	\item Buys the game on Steam
+	\item Logs in on the Steam client
+	\item All the achievements associated with id #12345 are added automatically to his Steam Achievements
+\end{itemize}
 
 % https://stackoverflow.com/questions/36200085/in-app-purchases-share-user-in-app-purchases-between-android-and-ios the following paragraph should be legal, maybe *wink*
 
-We also take advantage of the platforms in-app purchase API to manage the purchase of cosmetics. Buying cosmetics in one platform will make them available in both PC and Android clients for the same account.
+We also take advantage of the platforms in-app purchase API to manage the purchase of cosmetics. The HTML platform won't have in-app purchases.
+Buying cosmetics in one platform will make them available in all the clients when logging in with the same user-id. Such information is shared the same way achievements are shared.
 
-The HTML version in our website will be playable for free and without an account. 
-There's no login required and no way to keep track of users achievements.
-
-In the HTML client there will be advertisements.
+This also applies to advertisements. If the "no advertisement" version is purchased and associated with an user-id, logging in with that user will block advertisements in all the clients, including the HTML one (note that the purchase still has to happen through Steam or Google Play in order to be available in the HTML client).
 
 All the 3 clients can host private matches and share an "invitation" keyword to invite friends to play. Crossplay is available across all clients.
 
