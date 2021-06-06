@@ -8,24 +8,23 @@ The Android version of the game will be delivered through the Google App Store.
 The HTML    version of the game will be available in a dedicated page within our website.
 
 \subsection{Delivery Methodology}
-The Steam and Android version are available for free through the Steam store and Google App Store respectively, with advertisements, but an in-app purchase for the same 4.99€ to prevent the advertisements.
+The Steam and Android version are available for free through the Steam store and Google App Store respectively, with advertisements, but an in-app purchase will be available on both services for 4.99€ to prevent the advertisements.
 The HTML version in our website will be playable for free, but will require a login through Google or Steam accounts.
 
 Achievements and purchases information is kept in our database, associated with the user-id. 
-In all the versions, the user can link an existing user-id to his account on the other platform. 
+In all the versions, the user can link an existing user-id to his account on the other service. 
 
 When a player obtains an achievement in the Steam or Android client, the achievement is added both to his platform-specific account (using Steam/Google API) and to our database; when a player obtains an achievement in the HTTP client, the achievement is added only to our database; when that player logs in with a different client, all the new achievements stored in our database will be added to the relative service as well.
 
-\textbf{Example}
-% https://stackoverflow.com/questions/36200085/in-app-purchases-share-user-in-app-purchases-between-android-and-ios the following paragraph should be legal, maybe *wink* TLDR si può fare
+\largeparagraph{Example}
 
 \begin{itemize}
-	\item Player #12345 logs in through his 12345@google.com Google account
-	\item Unlocks achievement A. A is added to his Google Play Achievements and in our database, associated with #12345.
-	\item Links his id #12345 with his Steam account.
+	\item Player \#12345 logs in through his 12345@google.com Google account
+	\item Unlocks achievement A. A is added to his Google Play Achievements and in our database, associated with \#12345.
+	\item Links his id \#12345 with his Steam account.
 	\item Buys the game on Steam
 	\item Logs in on the Steam client
-	\item All the achievements associated with id #12345 are added automatically to his Steam Achievements
+	\item All the achievements associated with id \#12345 are added automatically to his Steam Achievements
 \end{itemize}
 
 % https://stackoverflow.com/questions/36200085/in-app-purchases-share-user-in-app-purchases-between-android-and-ios the following paragraph should be legal, maybe *wink*
